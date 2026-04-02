@@ -27,6 +27,8 @@
 		A10000010000000000000015 /* SkillsExplorerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000015 /* SkillsExplorerView.swift */; };
 		A10000010000000000000016 /* SkillsTaxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000016 /* SkillsTaxonomy.swift */; };
 		A10000010000000000000017 /* TenderSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000017 /* TenderSource.swift */; };
+		A10000010000000000000018 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000018 /* UserProfile.swift */; };
+		A10000010000000000000019 /* CompanyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000019 /* CompanyDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		A20000010000000000000015 /* SkillsExplorerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsExplorerView.swift; sourceTree = "<group>"; };
 		A20000010000000000000016 /* SkillsTaxonomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTaxonomy.swift; sourceTree = "<group>"; };
 		A20000010000000000000017 /* TenderSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderSource.swift; sourceTree = "<group>"; };
+		A20000010000000000000018 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		A20000010000000000000019 /* CompanyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 				A20000010000000000000003 /* Company.swift */,
 				A20000010000000000000016 /* SkillsTaxonomy.swift */,
 				A20000010000000000000017 /* TenderSource.swift */,
+				A20000010000000000000018 /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 				A20000010000000000000006 /* JobDetailView.swift */,
 				A20000010000000000000007 /* FilterView.swift */,
 				A20000010000000000000008 /* CompanyListView.swift */,
+				A20000010000000000000019 /* CompanyDetailView.swift */,
 				A20000010000000000000015 /* SkillsExplorerView.swift */,
 			);
 			path = Views;
@@ -216,6 +222,7 @@
 				A10000010000000000000001 /* GovOpsApp.swift in Sources */,
 				A10000010000000000000002 /* Opportunity.swift in Sources */,
 				A10000010000000000000003 /* Company.swift in Sources */,
+				A10000010000000000000018 /* UserProfile.swift in Sources */,
 				A10000010000000000000004 /* DataService.swift in Sources */,
 				A10000010000000000000010 /* AuthService.swift in Sources */,
 				A10000010000000000000011 /* AggregationService.swift in Sources */,
@@ -223,6 +230,7 @@
 				A10000010000000000000006 /* JobDetailView.swift in Sources */,
 				A10000010000000000000007 /* FilterView.swift in Sources */,
 				A10000010000000000000008 /* CompanyListView.swift in Sources */,
+				A10000010000000000000019 /* CompanyDetailView.swift in Sources */,
 				A10000010000000000000012 /* SplashView.swift in Sources */,
 				A10000010000000000000013 /* LoginView.swift in Sources */,
 				A10000010000000000000014 /* MainTabView.swift in Sources */,
