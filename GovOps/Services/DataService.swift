@@ -24,16 +24,19 @@ class DataService: ObservableObject {
 
         DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.5) {
             do {
-                // Load opportunities from two files
-                guard let oppsURL = Bundle.main.url(forResource: "opportunities", withExtension: "json") else {
-                    throw DataLoadError.fileNotFound("opportunities.json")
-                }
-                let oppsData = try Data(contentsOf: oppsURL)
+                // Load opportunities from three files
+                let decoder = JSONDecoder()
+                var allOpps: [Opportunity] = []
 
-                guard let opps2URL = Bundle.main.url(forResource: "opportunities2", withExtension: "json") else {
-                    throw DataLoadError.fileNotFound("opportunities2.json")
+                let oppFiles = ["opportunities", "opportunities2", "opportunities3"]
+                for fileName in oppFiles {
+                    guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
+                        throw DataLoadError.fileNotFound("\(fileName).json")
+                    }
+                    let data = try Data(contentsOf: url)
+                    let opps = try decoder.decode([Opportunity].self, from: data)
+                    allOpps.append(contentsOf: opps)
                 }
-                let opps2Data = try Data(contentsOf: opps2URL)
 
                 // Load companies
                 guard let companiesURL = Bundle.main.url(forResource: "companies", withExtension: "json") else {
@@ -41,10 +44,7 @@ class DataService: ObservableObject {
                 }
                 let companiesData = try Data(contentsOf: companiesURL)
 
-                let decoder = JSONDecoder()
-                let opps1 = try decoder.decode([Opportunity].self, from: oppsData)
-                let opps2 = try decoder.decode([Opportunity].self, from: opps2Data)
-                let loadedOpps = opps1 + opps2
+                let loadedOpps = allOpps
                 let loadedCompanies = try decoder.decode([Company].self, from: companiesData)
 
                 // Pre-compute company matching

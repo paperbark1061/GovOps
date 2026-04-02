@@ -10,6 +10,7 @@ struct Opportunity: Identifiable, Codable {
     let module: String
     let category: String
     let buyictURL: String?
+    let sysId: String?
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -22,9 +23,10 @@ struct Opportunity: Identifiable, Codable {
         module = try container.decodeIfPresent(String.self, forKey: .module) ?? ""
         category = try container.decodeIfPresent(String.self, forKey: .category) ?? ""
         buyictURL = try container.decodeIfPresent(String.self, forKey: .buyictURL)
+        sysId = try container.decodeIfPresent(String.self, forKey: .sysId)
     }
 
-    init(id: String, title: String, buyer: String, arrangement: String, location: String, closing: String, module: String, category: String, buyictURL: String? = nil) {
+    init(id: String, title: String, buyer: String, arrangement: String, location: String, closing: String, module: String, category: String, buyictURL: String? = nil, sysId: String? = nil) {
         self.id = id
         self.title = title
         self.buyer = buyer
@@ -34,16 +36,28 @@ struct Opportunity: Identifiable, Codable {
         self.module = module
         self.category = category
         self.buyictURL = buyictURL
+        self.sysId = sysId
     }
 
-    /// The effective BuyICT URL - uses the direct link if available, otherwise the general listing page
+    /// Table name derived from ID prefix for building BuyICT URLs
+    private var tableName: String {
+        if id.hasPrefix("LH-") { return "u_lh_procurement" }
+        else if id.hasPrefix("PCS-") { return "u_pcs_procurement" }
+        else if id.hasPrefix("RFI-") { return "u_rfi_procurement" }
+        else { return "" }
+    }
+
+    /// The effective BuyICT URL - builds from sysId if available, falls back to buyictURL, then general listing
     var effectiveBuyictURL: String {
-        buyictURL ?? "https://www.buyict.gov.au/sp?id=procurement_702702702&topic_id=292278ac1bf62a50f421db96b04bcbd5"
+        if let sysId = sysId, !sysId.isEmpty, !tableName.isEmpty {
+            return "https://www.buyict.gov.au/public?id=opportunity_details&table=\(tableName)&sys_id=\(sysId)&entry=opp_page"
+        }
+        return buyictURL ?? "https://www.buyict.gov.au/sp?id=procurement_702702702&topic_id=292278ac1bf62a50f421db96b04bcbd5"
     }
 
     enum CodingKeys: String, CodingKey {
         case id, title, buyer, arrangement, location, closing, module, category
-        case buyictURL
+        case buyictURL, sysId
     }
 
     var skills: [String] {
