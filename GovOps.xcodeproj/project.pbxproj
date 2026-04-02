@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000010000000000000001 /* GovOpsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000001 /* GovOpsApp.swift */; };
+		A10000010000000000000002 /* Opportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000002 /* Opportunity.swift */; };
+		A10000010000000000000003 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000003 /* Company.swift */; };
+		A10000010000000000000004 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000004 /* DataService.swift */; };
+		A10000010000000000000005 /* JobListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000005 /* JobListView.swift */; };
+		A10000010000000000000006 /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000006 /* JobDetailView.swift */; };
+		A10000010000000000000007 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000007 /* FilterView.swift */; };
+		A10000010000000000000008 /* CompanyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000008 /* CompanyListView.swift */; };
+		A10000010000000000000009 /* opportunities.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000009 /* opportunities.json */; };
+		A1000001000000000000000A /* companies.json in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000C /* companies.json */; };
+		A1000001000000000000000B /* opportunities2.json in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000D /* opportunities2.json */; };
+		A1000001000000000000000C /* opportunities3.json in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000E /* opportunities3.json */; };
+		A10000010000000000000010 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000010 /* AuthService.swift */; };
+		A10000010000000000000011 /* AggregationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000011 /* AggregationService.swift */; };
+		A10000010000000000000012 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000012 /* SplashView.swift */; };
+		A10000010000000000000013 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000013 /* LoginView.swift */; };
+		A10000010000000000000014 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000014 /* MainTabView.swift */; };
+		A10000010000000000000015 /* SkillsExplorerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000015 /* SkillsExplorerView.swift */; };
+		A10000010000000000000016 /* SkillsTaxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000016 /* SkillsTaxonomy.swift */; };
+		A10000010000000000000017 /* TenderSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000017 /* TenderSource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A20000010000000000000001 /* GovOpsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GovOpsApp.swift; sourceTree = "<group>"; };
+		A20000010000000000000002 /* Opportunity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opportunity.swift; sourceTree = "<group>"; };
+		A20000010000000000000003 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		A20000010000000000000004 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		A20000010000000000000005 /* JobListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListView.swift; sourceTree = "<group>"; };
+		A20000010000000000000006 /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
+		A20000010000000000000007 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		A20000010000000000000008 /* CompanyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListView.swift; sourceTree = "<group>"; };
+		A20000010000000000000009 /* opportunities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = opportunities.json; sourceTree = "<group>"; };
+		A2000001000000000000000A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2000001000000000000000B /* GovOps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovOps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2000001000000000000000C /* companies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companies.json; sourceTree = "<group>"; };
+		A2000001000000000000000D /* opportunities2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = opportunities2.json; sourceTree = "<group>"; };
+		A2000001000000000000000E /* opportunities3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = opportunities3.json; sourceTree = "<group>"; };
+		A20000010000000000000010 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A20000010000000000000011 /* AggregationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggregationService.swift; sourceTree = "<group>"; };
+		A20000010000000000000012 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		A20000010000000000000013 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A20000010000000000000014 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		A20000010000000000000015 /* SkillsExplorerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsExplorerView.swift; sourceTree = "<group>"; };
+		A20000010000000000000016 /* SkillsTaxonomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTaxonomy.swift; sourceTree = "<group>"; };
+		A20000010000000000000017 /* TenderSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderSource.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A30000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A40000010000000000000001 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				A40000010000000000000002 /* GovOps */,
+				A40000010000000000000007 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A40000010000000000000002 /* GovOps */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000001 /* GovOpsApp.swift */,
+				A2000001000000000000000A /* Info.plist */,
+				A40000010000000000000003 /* Models */,
+				A40000010000000000000004 /* Services */,
+				A40000010000000000000005 /* Views */,
+				A40000010000000000000006 /* Resources */,
+			);
+			path = GovOps;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000002 /* Opportunity.swift */,
+				A20000010000000000000003 /* Company.swift */,
+				A20000010000000000000016 /* SkillsTaxonomy.swift */,
+				A20000010000000000000017 /* TenderSource.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000004 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000004 /* DataService.swift */,
+				A20000010000000000000010 /* AuthService.swift */,
+				A20000010000000000000011 /* AggregationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000012 /* SplashView.swift */,
+				A20000010000000000000013 /* LoginView.swift */,
+				A20000010000000000000014 /* MainTabView.swift */,
+				A20000010000000000000005 /* JobListView.swift */,
+				A20000010000000000000006 /* JobDetailView.swift */,
+				A20000010000000000000007 /* FilterView.swift */,
+				A20000010000000000000008 /* CompanyListView.swift */,
+				A20000010000000000000015 /* SkillsExplorerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000006 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000009 /* opportunities.json */,
+				A2000001000000000000000C /* companies.json */,
+				A2000001000000000000000D /* opportunities2.json */,
+				A2000001000000000000000E /* opportunities3.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000007 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2000001000000000000000B /* GovOps.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A50000010000000000000001 /* GovOps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A70000010000000000000003 /* Build configuration list for PBXNativeTarget "GovOps" */;
+			buildPhases = (
+				A60000010000000000000001 /* Sources */,
+				A30000010000000000000001 /* Frameworks */,
+				A60000010000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GovOps;
+			productName = GovOps;
+			productReference = A2000001000000000000000B /* GovOps.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A80000010000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					A50000010000000000000001 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = A70000010000000000000001 /* Build configuration list for PBXProject "GovOps" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A40000010000000000000001 /* Root */;
+			productRefGroup = A40000010000000000000007 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A50000010000000000000001 /* GovOps */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A60000010000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000010000000000000009 /* opportunities.json in Resources */,
+				A1000001000000000000000A /* companies.json in Resources */,
+				A1000001000000000000000B /* opportunities2.json in Resources */,
+				A1000001000000000000000C /* opportunities3.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A60000010000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000010000000000000001 /* GovOpsApp.swift in Sources */,
+				A10000010000000000000002 /* Opportunity.swift in Sources */,
+				A10000010000000000000003 /* Company.swift in Sources */,
+				A10000010000000000000004 /* DataService.swift in Sources */,
+				A10000010000000000000010 /* AuthService.swift in Sources */,
+				A10000010000000000000011 /* AggregationService.swift in Sources */,
+				A10000010000000000000005 /* JobListView.swift in Sources */,
+				A10000010000000000000006 /* JobDetailView.swift in Sources */,
+				A10000010000000000000007 /* FilterView.swift in Sources */,
+				A10000010000000000000008 /* CompanyListView.swift in Sources */,
+				A10000010000000000000012 /* SplashView.swift in Sources */,
+				A10000010000000000000013 /* LoginView.swift in Sources */,
+				A10000010000000000000014 /* MainTabView.swift in Sources */,
+				A10000010000000000000015 /* SkillsExplorerView.swift in Sources */,
+				A10000010000000000000016 /* SkillsTaxonomy.swift in Sources */,
+				A10000010000000000000017 /* TenderSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A90000010000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A90000010000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A90000010000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = GovOps/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.govops.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A90000010000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = GovOps/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.govops.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A70000010000000000000001 /* Build configuration list for PBXProject "GovOps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A90000010000000000000001 /* Debug */,
+				A90000010000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A70000010000000000000003 /* Build configuration list for PBXNativeTarget "GovOps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A90000010000000000000003 /* Debug */,
+				A90000010000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A80000010000000000000001 /* Project object */;
+}
