@@ -8,11 +8,34 @@ struct JobDetailView: View {
         dataService.getCompanies(forOpportunity: opportunity)
     }
 
+    var allCompanies: [Company] {
+        dataService.companies
+    }
+
+    // 3-tier matching
+    var exactMatchCompanies: [Company] {
+        dataService.getExactMatchCompanies(forOpportunity: opportunity)
+    }
+
+    var similarMatchCompanies: [Company] {
+        dataService.getSimilarMatchCompanies(forOpportunity: opportunity)
+    }
+
+    var capableCompanies: [Company] {
+        dataService.getCapableCompanies(forOpportunity: opportunity)
+    }
+
+    var extractedSkills: [TaxonomySkill] {
+        let matched = SkillsTaxonomyDB.extractSkills(from: opportunity.title)
+        return matched.compactMap { SkillsTaxonomyDB.skill(byId: $0.skillId) }
+    }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
+                // Header
                 VStack(alignment: .leading, spacing: 12) {
-                    HStack {
+                    HStack(alignment: .top) {
                         Text(opportunity.title)
                             .font(.title2)
                             .fontWeight(.bold)
@@ -31,47 +54,112 @@ struct JobDetailView: View {
                 .background(Color(.systemBackground))
                 .cornerRadius(12)
 
+                // Details card
                 VStack(alignment: .leading, spacing: 12) {
                     DetailRow(label: "Reference", value: opportunity.id)
                     Divider()
-                    DetailRow(label: "Arrangement", value: opportunity.arrangement)
-                    Divider()
-                    DetailRow(label: "Location", value: opportunity.location)
-                    Divider()
-                    DetailRow(label: "Category", value: opportunity.category)
-                    Divider()
-                    DetailRow(label: "Module", value: opportunity.module)
-                    Divider()
-                    DetailRow(label: "Closing Date", value: opportunity.closing)
+                    if !opportunity.arrangement.isEmpty {
+                        DetailRow(label: "Arrangement", value: opportunity.arrangement)
+                        Divider()
+                    }
+                    if !opportunity.location.isEmpty {
+                        DetailRow(label: "Location", value: opportunity.location)
+                        Divider()
+                    }
+                    if !opportunity.category.isEmpty {
+                        DetailRow(label: "Category", value: opportunity.category)
+                        Divider()
+                    }
+                    if !opportunity.module.isEmpty {
+                        DetailRow(label: "Module", value: opportunity.module)
+                        Divider()
+                    }
+                    if !opportunity.closing.isEmpty {
+                        DetailRow(label: "Closing Date", value: opportunity.closing)
+                    }
                 }
                 .padding()
                 .background(Color(.systemGray6))
                 .cornerRadius(12)
 
+                // Original Advert Link - prominent
                 if let url = URL(string: opportunity.effectiveBuyictURL) {
                     Link(destination: url) {
                         HStack {
-                            Image(systemName: "globe")
-                            Text("View on BuyICT")
-                                .fontWeight(.medium)
+                            Image(systemName: "doc.text.fill")
+                                .font(.title3)
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("View Original Listing")
+                                    .fontWeight(.semibold)
+                                Text("Open on BuyICT")
+                                    .font(.caption)
+                                    .opacity(0.8)
+                            }
                             Spacer()
                             Image(systemName: "arrow.up.right.square")
+                                .font(.title3)
                         }
-                        .font(.subheadline)
                         .padding()
-                        .background(Color.blue.opacity(0.1))
-                        .foregroundColor(.blue)
-                        .cornerRadius(10)
+                        .background(
+                            LinearGradient(colors: [Color.blue, Color.blue.opacity(0.8)], startPoint: .leading, endPoint: .trailing)
+                        )
+                        .foregroundColor(.white)
+                        .cornerRadius(12)
                     }
                 }
 
-                if !opportunity.skills.isEmpty {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Key Skills")
-                            .font(.headline)
+                // Skills Section - clickable to SkillDetailView
+                if !extractedSkills.isEmpty {
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack {
+                            Image(systemName: "graduationcap.fill")
+                                .foregroundColor(.blue)
+                            Text("Required Skills")
+                                .font(.headline)
+                        }
+
+                        Text("Tap a skill to see certifications and training pathways")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
 
                         FlowLayout(spacing: 8) {
-                            ForEach(opportunity.skills, id: \.self) { skill in
+                            ForEach(extractedSkills) { skill in
+                                NavigationLink(destination: SkillDetailView(skill: skill)) {
+                                    HStack(spacing: 6) {
+                                        Image(systemName: skill.category.icon)
+                                            .font(.caption2)
+                                        Text(skill.name)
+                                            .font(.caption)
+                                            .fontWeight(.semibold)
+                                        Image(systemName: "chevron.right")
+                                            .font(.system(size: 8, weight: .bold))
+                                    }
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 8)
+                                    .background(Color.blue.opacity(0.1))
+                                    .foregroundColor(.blue)
+                                    .cornerRadius(20)
+                                }
+                            }
+                        }
+                    }
+                    .padding()
+                    .background(Color(.systemBackground))
+                    .cornerRadius(12)
+                }
+
+                // Also show basic skill chips from title extraction
+                let basicSkills = opportunity.skills.filter { basic in
+                    !extractedSkills.contains { $0.name == basic }
+                }
+                if !basicSkills.isEmpty {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Additional Keywords")
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                            .foregroundColor(.secondary)
+                        FlowLayout(spacing: 8) {
+                            ForEach(basicSkills, id: \.self) { skill in
                                 SkillChip(skill: skill)
                             }
                         }
@@ -81,26 +169,129 @@ struct JobDetailView: View {
                     .cornerRadius(12)
                 }
 
-                if !matchingCompanies.isEmpty {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Companies Advertising This Role")
-                            .font(.headline)
-                            .padding(.horizontal)
+                // 3-Tier Companies
+                if !exactMatchCompanies.isEmpty {
+                    CompanyTierSection(
+                        title: "Recruiting This Role",
+                        subtitle: "Companies actively advertising this or very similar roles",
+                        icon: "checkmark.seal.fill",
+                        iconColor: .green,
+                        companies: exactMatchCompanies
+                    )
+                }
 
-                        ForEach(matchingCompanies) { company in
-                            CompanyCard(company: company)
-                        }
-                    }
+                if !similarMatchCompanies.isEmpty {
+                    CompanyTierSection(
+                        title: "Similar Roles",
+                        subtitle: "Companies recruiting for roles with overlapping skills",
+                        icon: "arrow.triangle.branch",
+                        iconColor: .orange,
+                        companies: similarMatchCompanies
+                    )
+                }
+
+                if !capableCompanies.isEmpty {
+                    CompanyTierSection(
+                        title: "Panel Capable",
+                        subtitle: "Approved panel suppliers with capability in this area",
+                        icon: "building.2.fill",
+                        iconColor: .blue,
+                        companies: capableCompanies
+                    )
                 }
 
                 Spacer()
             }
             .padding()
         }
-        .navigationTitle("Job Details")
+        .background(Color(.systemGray6))
+        .navigationTitle("Opportunity")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
+
+// MARK: - Company Tier Section
+
+struct CompanyTierSection: View {
+    let title: String
+    let subtitle: String
+    let icon: String
+    let iconColor: Color
+    let companies: [Company]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                Image(systemName: icon)
+                    .foregroundColor(iconColor)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title)
+                        .font(.headline)
+                    Text(subtitle)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+            }
+
+            ForEach(companies) { company in
+                NavigationLink(destination: CompanyDetailView(company: company)) {
+                    CompanyMiniCard(company: company)
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(12)
+    }
+}
+
+struct CompanyMiniCard: View {
+    let company: Company
+
+    var body: some View {
+        HStack(spacing: 12) {
+            ZStack {
+                Circle()
+                    .fill(Color.blue.opacity(0.1))
+                    .frame(width: 44, height: 44)
+                Text(String(company.name.prefix(2)).uppercased())
+                    .font(.caption)
+                    .fontWeight(.bold)
+                    .foregroundColor(.blue)
+            }
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(company.name)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundColor(.primary)
+
+                if !company.advertisingRoles.isEmpty {
+                    Text(company.advertisingRoles.prefix(2).joined(separator: ", "))
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .lineLimit(1)
+                }
+            }
+
+            Spacer()
+
+            if company.isAdvertising {
+                Circle()
+                    .fill(Color.green)
+                    .frame(width: 8, height: 8)
+            }
+
+            Image(systemName: "chevron.right")
+                .font(.caption)
+                .foregroundColor(.secondary)
+        }
+        .padding(.vertical, 6)
+    }
+}
+
+// MARK: - Supporting Views
 
 struct DetailRow: View {
     let label: String
@@ -160,80 +351,6 @@ struct SkillChip: View {
             .background(Color.blue.opacity(0.1))
             .foregroundColor(.blue)
             .cornerRadius(16)
-    }
-}
-
-struct CompanyCard: View {
-    let company: Company
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(company.name)
-                        .font(.headline)
-
-                    if !company.advertisingRoles.isEmpty {
-                        Text(company.advertisingRoles.joined(separator: ", "))
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                    }
-                }
-
-                Spacer()
-
-                if company.isAdvertising {
-                    Label("Active", systemImage: "checkmark.circle.fill")
-                        .font(.caption2)
-                        .foregroundColor(.green)
-                }
-            }
-
-            if !company.platforms.isEmpty {
-                HStack(spacing: 8) {
-                    Text("Platforms:")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-
-                    FlowLayout(spacing: 4) {
-                        ForEach(company.platforms, id: \.self) { platform in
-                            Text(platform)
-                                .font(.caption2)
-                                .padding(.horizontal, 6)
-                                .padding(.vertical, 2)
-                                .background(Color.gray.opacity(0.2))
-                                .cornerRadius(4)
-                        }
-                    }
-                }
-            }
-
-            HStack(spacing: 12) {
-                if let urlString = company.websiteURL, let url = URL(string: urlString) {
-                    Link(destination: url) {
-                        Label("Website", systemImage: "globe")
-                            .font(.caption)
-                    }
-                }
-
-                if let urlString = company.jobsURL, let url = URL(string: urlString) {
-                    Link(destination: url) {
-                        Label("Jobs", systemImage: "briefcase")
-                            .font(.caption)
-                    }
-                }
-
-                if let urlString = company.buyictURL, let url = URL(string: urlString) {
-                    Link(destination: url) {
-                        Label("BuyICT Profile", systemImage: "building.columns")
-                            .font(.caption)
-                    }
-                }
-            }
-        }
-        .padding()
-        .background(Color(.systemGray6))
-        .cornerRadius(12)
     }
 }
 
