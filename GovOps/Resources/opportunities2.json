@@ -1,0 +1,519 @@
+[
+  {
+    "title": "1 UX Designer",
+    "id": "LH-05984",
+    "buyer": "Department of Health, Disability and Ageing",
+    "arrangement": "Remote",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 Lead Mainframe Data Engineer",
+    "id": "LH-05901",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "ACT, SA",
+    "closing": "9 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Senior Software Engineer (Developer)",
+    "id": "LH-05960",
+    "buyer": "IP Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC, NSW",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 Senior Oracle Software Engineer (Developer)",
+    "id": "LH-05896",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "9 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Legal Technology Uplift: Enhancing Legal Advice and Compliance",
+    "id": "PCS-03545",
+    "buyer": "Federal Court of Australia",
+    "arrangement": "Remote",
+    "closing": "3 April 2026",
+    "module": "Professional and Consulting Services"
+  },
+  {
+    "title": "MST25-030-Artificial Intelligence Solution for Objectionable Material",
+    "id": "RFI-03810b",
+    "buyer": "Services Australia",
+    "closing": "21 April 2026"
+  },
+  {
+    "title": "1 Manager SEQ FFWS Project Manager",
+    "id": "LH-05955",
+    "buyer": "Bureau of Meteorology",
+    "arrangement": "Hybrid",
+    "location": "QLD",
+    "closing": "1 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Two Lead UX Designer",
+    "id": "LH-05953",
+    "buyer": "Australian Financial Security Authority",
+    "arrangement": "Hybrid",
+    "location": "QLD, WA, ACT, VIC, NSW, SA, TAS",
+    "closing": "30 March 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "CDR Website User Research and Usability Testing Services",
+    "id": "PCS-03716b",
+    "buyer": "Department of the Treasury",
+    "arrangement": "Remote",
+    "closing": "8 April 2026",
+    "module": "Professional and Consulting Services"
+  },
+  {
+    "title": "Minimum of 1 Senior Test Engineer Automation Tester",
+    "id": "LH-05898",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC, SA",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Lead Data Engineer",
+    "id": "LH-05932",
+    "buyer": "Department of Climate Change, Energy, the Environment and Water",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "6 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Information Architect",
+    "id": "LH-05734",
+    "buyer": "Bureau of Meteorology",
+    "arrangement": "Hybrid",
+    "location": "VIC",
+    "closing": "1 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Lead Data Engineer",
+    "id": "LH-03105",
+    "buyer": "Department of Social Services",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "31 March 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "2 Senior Business Analyst Business Analysts",
+    "id": "LH-05951",
+    "buyer": "Bureau of Meteorology",
+    "arrangement": "Hybrid",
+    "location": "QLD, VIC",
+    "closing": "1 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 SAS Senior Developer Software Engineer (Developer)",
+    "id": "LH-05895",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "9 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Lead Data Engineer",
+    "id": "LH-05927",
+    "buyer": "Australian Criminal Intelligence Commission",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Managed Services of ICT Infrastructure",
+    "id": "PCS-03574",
+    "buyer": "National Indigenous Australians Agency",
+    "arrangement": "Remote",
+    "closing": "31 March 2026",
+    "module": "Professional and Consulting Services"
+  },
+  {
+    "title": "Minimum of 1 Senior Developer Software Engineer (Developer)",
+    "id": "LH-05889",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC, SA",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 Principal Android Developer Software Engineer (Developer)",
+    "id": "LH-05815",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC",
+    "closing": "31 March 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 Midrange .Net Delphi Software Engineer (Developer)",
+    "id": "LH-05886",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC, SA",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Senior Test Analyst",
+    "id": "LH-05933",
+    "buyer": "Department of Climate Change, Energy, the Environment and Water",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "6 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Business Analyst",
+    "id": "LH-05944",
+    "buyer": "Department of Climate Change, Energy, the Environment and Water",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "6 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "26AMSA029 Network Modernisation",
+    "id": "PCS-03720",
+    "buyer": "Australian Maritime Safety Authority",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "3 April 2026",
+    "module": "Professional and Consulting Services"
+  },
+  {
+    "title": "Minimum of 1 SAP Senior Developer Software Engineer (Developer)",
+    "id": "LH-05891",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC",
+    "closing": "9 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Senior Infrastructure Engineer",
+    "id": "LH-05852",
+    "buyer": "Bureau of Meteorology",
+    "arrangement": "Hybrid",
+    "location": "VIC",
+    "closing": "1 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 Senior IBM DataStage ETL Software Engineer (Developer)",
+    "id": "LH-05827",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC, SA",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Database Platform (and APEX) Support Services",
+    "id": "PCS-03682",
+    "buyer": "Department of Home Affairs",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "1 April 2026",
+    "module": "Professional and Consulting Services"
+  },
+  {
+    "title": "Minimum of 1 Senior IOS / Android Software Engineer (Developer)",
+    "id": "LH-05820",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC",
+    "closing": "31 March 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 Lead Mainframe Developer Software Engineer (Developer)",
+    "id": "LH-05900",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "ACT, SA",
+    "closing": "9 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 Lead .NET Software Engineer (Developer)",
+    "id": "LH-05899",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "ACT, SA",
+    "closing": "9 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Senior Delivery Manager",
+    "id": "LH-05942",
+    "buyer": "Department of Climate Change, Energy, the Environment and Water",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "6 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 2 Lead Cyber Security Adviser",
+    "id": "LH-05904",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC, SA",
+    "closing": "31 March 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Commvault & Veritas Infrastructure Engineer",
+    "id": "LH-05940",
+    "buyer": "Department of Climate Change, Energy, the Environment and Water",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "6 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Network Tech",
+    "id": "LH-05938",
+    "buyer": "Department of Climate Change, Energy, the Environment and Water",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "6 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 Automation Developer Software Engineer (Developer)",
+    "id": "LH-05879",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 Senior OpenText Software Engineer (Developer)",
+    "id": "LH-05826",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC, SA",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Software Asset Management (SAM) professionals",
+    "id": "PCS-03717",
+    "buyer": "Department of Agriculture, Fisheries and Forestry",
+    "arrangement": "Onsite",
+    "location": "ACT",
+    "closing": "2 April 2026",
+    "module": "Professional and Consulting Services"
+  },
+  {
+    "title": "Minimum of 1 APS5 Test Analyst",
+    "id": "LH-05920",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC, SA",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "3 Senior Solution Architects",
+    "id": "LH-05510",
+    "buyer": "Australian Electoral Commission",
+    "arrangement": "Hybrid",
+    "location": "QLD, WA, ACT, VIC, NSW, SA, TAS",
+    "closing": "8 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "PICM0004859 - Managed Print Services for Digital Canberra",
+    "id": "RFI-03799",
+    "buyer": "ACT Government",
+    "location": "ACT",
+    "closing": "14 April 2026"
+  },
+  {
+    "title": "1 Lumi - ACORN Help Desk Officer",
+    "id": "LH-05915",
+    "buyer": "Australian Criminal Intelligence Commission",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "4 Senior Azure Cloud Engineer Cloud Engineers",
+    "id": "LH-05913",
+    "buyer": "Department of Health, Disability and Ageing",
+    "arrangement": "Hybrid",
+    "location": "QLD, WA, ACT, VIC, NSW, NT, SA, TAS",
+    "closing": "3 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Change Management Training",
+    "id": "PCS-03630",
+    "buyer": "Department of Social Services",
+    "arrangement": "Remote",
+    "closing": "31 March 2026",
+    "module": "Professional and Consulting Services"
+  },
+  {
+    "title": "1 DocumentsCorePack Design",
+    "id": "LH-05893",
+    "buyer": "Department of Finance",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "31 March 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Lead Cyber Security Analyst",
+    "id": "LH-05906",
+    "buyer": "Department of Veterans' Affairs",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "3 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Lead Security Engineer",
+    "id": "LH-05908",
+    "buyer": "Department of Veterans' Affairs",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "3 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 Senior IMS/COBOL Developer Software Engineer (Developer)",
+    "id": "LH-05821",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC, SA",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 Senior Siebel Environment DevOps Engineer",
+    "id": "LH-05830",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC, SA",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Minimum of 1 Senior Fusion Middleware Software Engineer (Developer)",
+    "id": "LH-05825",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC, SA",
+    "closing": "7 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "1 Lead Business Analyst",
+    "id": "LH-05897",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "9 April 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Digital Accessibility eLearning",
+    "id": "PCS-03705",
+    "buyer": "Department of Social Services",
+    "arrangement": "Remote",
+    "closing": "8 April 2026",
+    "module": "Professional and Consulting Services"
+  },
+  {
+    "title": "Minimum of 1 EL1 Senior Systems Analyst",
+    "id": "LH-05871",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC, SA",
+    "closing": "31 March 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Aged Care Gateway DevSecOps Maturity Assessment",
+    "id": "PCS-03654",
+    "buyer": "Department of Health, Disability and Ageing",
+    "arrangement": "Hybrid",
+    "location": "QLD, WA, ACT, VIC, NSW, NT, SA, TAS",
+    "closing": "1 April 2026",
+    "module": "Professional and Consulting Services"
+  },
+  {
+    "title": "Standard pricing for Inbound Services",
+    "id": "RFI-03788",
+    "buyer": "Services Australia",
+    "closing": "8 April 2026"
+  },
+  {
+    "title": "1 MS Dynamics D365 Solution Architect",
+    "id": "LH-05880",
+    "buyer": "Department of Finance",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "31 March 2026",
+    "module": "ICT Labour Hire"
+  },
+  {
+    "title": "Infosec Registered Assessors Program",
+    "id": "PCS-03551",
+    "buyer": "Department of Defence",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "31 March 2026",
+    "module": "Professional and Consulting Services"
+  },
+  {
+    "title": "Cloud Platforms Augmentation Services",
+    "id": "PCS-02655",
+    "buyer": "Bureau of Meteorology",
+    "arrangement": "Hybrid",
+    "location": "VIC",
+    "closing": "31 March 2026",
+    "module": "Professional and Consulting Services"
+  },
+  {
+    "title": "Penetration Testing Services",
+    "id": "PCS-03564",
+    "buyer": "Services Australia",
+    "arrangement": "Hybrid",
+    "location": "QLD, ACT, VIC",
+    "closing": "30 March 2026",
+    "module": "Professional and Consulting Services"
+  },
+  {
+    "title": "1 Senior Java Developer",
+    "id": "LH-05939",
+    "buyer": "Department of Climate Change, Energy, the Environment and Water",
+    "arrangement": "Hybrid",
+    "location": "ACT",
+    "closing": "6 April 2026",
+    "module": "ICT Labour Hire"
+  }
+]
