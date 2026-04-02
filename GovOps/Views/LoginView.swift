@@ -4,8 +4,8 @@ struct LoginView: View {
     @EnvironmentObject var authService: AuthService
     @Environment(\.dismiss) var dismiss
 
-    @State private var email = ""
-    @State private var password = ""
+    @State private var email = "matt@govops.au"
+    @State private var password = "demo1234"
     @State private var showPassword = false
     @FocusState private var focusedField: Field?
 
@@ -177,13 +177,7 @@ struct LoginView: View {
     private func signIn() {
         focusedField = nil
         authService.login(email: email, password: password)
-
-        // Dismiss after successful login
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            if authService.isAuthenticated {
-                dismiss()
-            }
-        }
+        // Sheet will auto-dismiss when SplashView detects isAuthenticated change
     }
 }
 

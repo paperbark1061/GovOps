@@ -131,6 +131,11 @@ struct SplashView: View {
                 LoginView()
                     .environmentObject(authService)
             }
+            .onChange(of: authService.isAuthenticated) { _, isAuth in
+                if isAuth {
+                    showLogin = false
+                }
+            }
             .onAppear {
                 withAnimation(.easeOut(duration: 0.8)) {
                     logoScale = 1.0
