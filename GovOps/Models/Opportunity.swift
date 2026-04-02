@@ -15,11 +15,11 @@ struct Opportunity: Identifiable, Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
-        title = try container.decode(String.self, forKey: .title)
-        buyer = try container.decode(String.self, forKey: .buyer)
+        title = try container.decodeIfPresent(String.self, forKey: .title) ?? "Untitled"
+        buyer = try container.decodeIfPresent(String.self, forKey: .buyer) ?? "Unknown"
         arrangement = try container.decodeIfPresent(String.self, forKey: .arrangement) ?? ""
         location = try container.decodeIfPresent(String.self, forKey: .location) ?? ""
-        closing = try container.decode(String.self, forKey: .closing)
+        closing = try container.decodeIfPresent(String.self, forKey: .closing) ?? ""
         module = try container.decodeIfPresent(String.self, forKey: .module) ?? ""
         category = try container.decodeIfPresent(String.self, forKey: .category) ?? ""
         buyictURL = try container.decodeIfPresent(String.self, forKey: .buyictURL)

@@ -23,43 +23,48 @@ class DataService: ObservableObject {
         }
 
         DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.5) {
-            do {
-                // Load opportunities from three files
-                let decoder = JSONDecoder()
-                var allOpps: [Opportunity] = []
+            let decoder = JSONDecoder()
+            var allOpps: [Opportunity] = []
+            var loadErrors: [String] = []
 
-                let oppFiles = ["opportunities", "opportunities2", "opportunities3"]
-                for fileName in oppFiles {
-                    guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
-                        throw DataLoadError.fileNotFound("\(fileName).json")
-                    }
-                    let data = try Data(contentsOf: url)
-                    let opps = try decoder.decode([Opportunity].self, from: data)
+            // Load opportunities from available files (graceful — skip missing/malformed)
+            let oppFiles = ["opportunities", "opportunities2", "opportunities3"]
+            for fileName in oppFiles {
+                if let url = Bundle.main.url(forResource: fileName, withExtension: "json"),
+                   let data = try? Data(contentsOf: url),
+                   let opps = try? decoder.decode([Opportunity].self, from: data) {
                     allOpps.append(contentsOf: opps)
+                } else {
+                    loadErrors.append("\(fileName).json")
                 }
+            }
 
-                // Load companies
-                guard let companiesURL = Bundle.main.url(forResource: "companies", withExtension: "json") else {
-                    throw DataLoadError.fileNotFound("companies.json")
-                }
-                let companiesData = try Data(contentsOf: companiesURL)
+            // Load companies
+            var loadedCompanies: [Company] = []
+            if let companiesURL = Bundle.main.url(forResource: "companies", withExtension: "json"),
+               let companiesData = try? Data(contentsOf: companiesURL),
+               let companies = try? decoder.decode([Company].self, from: companiesData) {
+                loadedCompanies = companies
+            } else {
+                loadErrors.append("companies.json")
+            }
 
-                let loadedOpps = allOpps
-                let loadedCompanies = try decoder.decode([Company].self, from: companiesData)
+            // Pre-compute company matching
+            let cache = Self.computeMatching(opportunities: allOpps, companies: loadedCompanies)
 
-                // Pre-compute company matching
-                let cache = Self.computeMatching(opportunities: loadedOpps, companies: loadedCompanies)
+            DispatchQueue.main.async {
+                self.opportunities = allOpps
+                self.companies = loadedCompanies
+                self.matchingCache = cache
+                self.isLoading = false
 
-                DispatchQueue.main.async {
-                    self.opportunities = loadedOpps
-                    self.companies = loadedCompanies
-                    self.matchingCache = cache
-                    self.isLoading = false
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    self.errorMessage = "Failed to load data: \(error.localizedDescription)"
-                    self.isLoading = false
+                if allOpps.isEmpty && loadedCompanies.isEmpty {
+                    self.errorMessage = "No data files found. Missing: \(loadErrors.joined(separator: ", "))"
+                } else if !loadErrors.isEmpty {
+                    // Partial load — some files missing but we still have data
+                    self.errorMessage = nil
+                } else {
+                    self.errorMessage = nil
                 }
             }
         }
