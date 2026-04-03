@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A10000010000000000000001 /* GovOpsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000001 /* GovOpsApp.swift */; };
+		A10000010000000000000001 /* GovICTJobsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000001 /* GovICTJobsApp.swift */; };
 		A10000010000000000000002 /* Opportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000002 /* Opportunity.swift */; };
 		A10000010000000000000003 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000003 /* Company.swift */; };
 		A10000010000000000000004 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000004 /* DataService.swift */; };
@@ -18,21 +18,14 @@
 		A10000010000000000000009 /* opportunities.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000009 /* opportunities.json */; };
 		A1000001000000000000000A /* companies.json in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000C /* companies.json */; };
 		A1000001000000000000000B /* opportunities2.json in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000D /* opportunities2.json */; };
-		A1000001000000000000000C /* opportunities3.json in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000E /* opportunities3.json */; };
-		A10000010000000000000010 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000010 /* AuthService.swift */; };
-		A10000010000000000000011 /* AggregationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000011 /* AggregationService.swift */; };
-		A10000010000000000000012 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000012 /* SplashView.swift */; };
-		A10000010000000000000013 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000013 /* LoginView.swift */; };
-		A10000010000000000000014 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000014 /* MainTabView.swift */; };
-		A10000010000000000000015 /* SkillsExplorerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000015 /* SkillsExplorerView.swift */; };
-		A10000010000000000000016 /* SkillsTaxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000016 /* SkillsTaxonomy.swift */; };
-		A10000010000000000000017 /* TenderSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000017 /* TenderSource.swift */; };
-		A10000010000000000000018 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000018 /* UserProfile.swift */; };
-		A10000010000000000000019 /* CompanyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000019 /* CompanyDetailView.swift */; };
+		A10000010000000000000020 /* opportunities3.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000020 /* opportunities3.json */; };
+		A10000010000000000000021 /* companies2.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000021 /* companies2.json */; };
+		A10000010000000000000022 /* companies3.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000022 /* companies3.json */; };
+		A10000010000000000000023 /* companies4.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000023 /* companies4.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A20000010000000000000001 /* GovOpsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GovOpsApp.swift; sourceTree = "<group>"; };
+		A20000010000000000000001 /* GovICTJobsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GovICTJobsApp.swift; sourceTree = "<group>"; };
 		A20000010000000000000002 /* Opportunity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opportunity.swift; sourceTree = "<group>"; };
 		A20000010000000000000003 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		A20000010000000000000004 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -42,20 +35,13 @@
 		A20000010000000000000008 /* CompanyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListView.swift; sourceTree = "<group>"; };
 		A20000010000000000000009 /* opportunities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = opportunities.json; sourceTree = "<group>"; };
 		A2000001000000000000000A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2000001000000000000000B /* GovOps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovOps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2000001000000000000000B /* GovICTJobs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovICTJobs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2000001000000000000000C /* companies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companies.json; sourceTree = "<group>"; };
 		A2000001000000000000000D /* opportunities2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = opportunities2.json; sourceTree = "<group>"; };
-		A2000001000000000000000E /* opportunities3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = opportunities3.json; sourceTree = "<group>"; };
-		A20000010000000000000010 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		A20000010000000000000011 /* AggregationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggregationService.swift; sourceTree = "<group>"; };
-		A20000010000000000000012 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		A20000010000000000000013 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		A20000010000000000000014 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		A20000010000000000000015 /* SkillsExplorerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsExplorerView.swift; sourceTree = "<group>"; };
-		A20000010000000000000016 /* SkillsTaxonomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTaxonomy.swift; sourceTree = "<group>"; };
-		A20000010000000000000017 /* TenderSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderSource.swift; sourceTree = "<group>"; };
-		A20000010000000000000018 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
-		A20000010000000000000019 /* CompanyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailView.swift; sourceTree = "<group>"; };
+		A20000010000000000000020 /* opportunities3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = opportunities3.json; sourceTree = "<group>"; };
+		A20000010000000000000021 /* companies2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companies2.json; sourceTree = "<group>"; };
+		A20000010000000000000022 /* companies3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companies3.json; sourceTree = "<group>"; };
+		A20000010000000000000023 /* companies4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companies4.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,22 +58,22 @@
 		A40000010000000000000001 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				A40000010000000000000002 /* GovOps */,
+				A40000010000000000000002 /* GovICTJobs */,
 				A40000010000000000000007 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A40000010000000000000002 /* GovOps */ = {
+		A40000010000000000000002 /* GovICTJobs */ = {
 			isa = PBXGroup;
 			children = (
-				A20000010000000000000001 /* GovOpsApp.swift */,
+				A20000010000000000000001 /* GovICTJobsApp.swift */,
 				A2000001000000000000000A /* Info.plist */,
 				A40000010000000000000003 /* Models */,
 				A40000010000000000000004 /* Services */,
 				A40000010000000000000005 /* Views */,
 				A40000010000000000000006 /* Resources */,
 			);
-			path = GovOps;
+			path = GovICTJobs;
 			sourceTree = "<group>";
 		};
 		A40000010000000000000003 /* Models */ = {
@@ -95,9 +81,6 @@
 			children = (
 				A20000010000000000000002 /* Opportunity.swift */,
 				A20000010000000000000003 /* Company.swift */,
-				A20000010000000000000016 /* SkillsTaxonomy.swift */,
-				A20000010000000000000017 /* TenderSource.swift */,
-				A20000010000000000000018 /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,8 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				A20000010000000000000004 /* DataService.swift */,
-				A20000010000000000000010 /* AuthService.swift */,
-				A20000010000000000000011 /* AggregationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -115,15 +96,10 @@
 		A40000010000000000000005 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A20000010000000000000012 /* SplashView.swift */,
-				A20000010000000000000013 /* LoginView.swift */,
-				A20000010000000000000014 /* MainTabView.swift */,
 				A20000010000000000000005 /* JobListView.swift */,
 				A20000010000000000000006 /* JobDetailView.swift */,
 				A20000010000000000000007 /* FilterView.swift */,
 				A20000010000000000000008 /* CompanyListView.swift */,
-				A20000010000000000000019 /* CompanyDetailView.swift */,
-				A20000010000000000000015 /* SkillsExplorerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,7 +110,10 @@
 				A20000010000000000000009 /* opportunities.json */,
 				A2000001000000000000000C /* companies.json */,
 				A2000001000000000000000D /* opportunities2.json */,
-				A2000001000000000000000E /* opportunities3.json */,
+				A20000010000000000000020 /* opportunities3.json */,
+				A20000010000000000000021 /* companies2.json */,
+				A20000010000000000000022 /* companies3.json */,
+				A20000010000000000000023 /* companies4.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -142,7 +121,7 @@
 		A40000010000000000000007 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A2000001000000000000000B /* GovOps.app */,
+				A2000001000000000000000B /* GovICTJobs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,9 +129,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A50000010000000000000001 /* GovOps */ = {
+		A50000010000000000000001 /* GovICTJobs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A70000010000000000000003 /* Build configuration list for PBXNativeTarget "GovOps" */;
+			buildConfigurationList = A70000010000000000000003 /* Build configuration list for PBXNativeTarget "GovICTJobs" */;
 			buildPhases = (
 				A60000010000000000000001 /* Sources */,
 				A30000010000000000000001 /* Frameworks */,
@@ -162,9 +141,9 @@
 			);
 			dependencies = (
 			);
-			name = GovOps;
-			productName = GovOps;
-			productReference = A2000001000000000000000B /* GovOps.app */;
+			name = GovICTJobs;
+			productName = GovICTJobs;
+			productReference = A2000001000000000000000B /* GovICTJobs.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +161,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A70000010000000000000001 /* Build configuration list for PBXProject "GovOps" */;
+			buildConfigurationList = A70000010000000000000001 /* Build configuration list for PBXProject "GovICTJobs" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -195,7 +174,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A50000010000000000000001 /* GovOps */,
+				A50000010000000000000001 /* GovICTJobs */,
 			);
 		};
 /* End PBXProject section */
@@ -208,7 +187,10 @@
 				A10000010000000000000009 /* opportunities.json in Resources */,
 				A1000001000000000000000A /* companies.json in Resources */,
 				A1000001000000000000000B /* opportunities2.json in Resources */,
-				A1000001000000000000000C /* opportunities3.json in Resources */,
+				A10000010000000000000020 /* opportunities3.json in Resources */,
+				A10000010000000000000021 /* companies2.json in Resources */,
+				A10000010000000000000022 /* companies3.json in Resources */,
+				A10000010000000000000023 /* companies4.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,24 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A10000010000000000000001 /* GovOpsApp.swift in Sources */,
+				A10000010000000000000001 /* GovICTJobsApp.swift in Sources */,
 				A10000010000000000000002 /* Opportunity.swift in Sources */,
 				A10000010000000000000003 /* Company.swift in Sources */,
-				A10000010000000000000018 /* UserProfile.swift in Sources */,
 				A10000010000000000000004 /* DataService.swift in Sources */,
-				A10000010000000000000010 /* AuthService.swift in Sources */,
-				A10000010000000000000011 /* AggregationService.swift in Sources */,
 				A10000010000000000000005 /* JobListView.swift in Sources */,
 				A10000010000000000000006 /* JobDetailView.swift in Sources */,
 				A10000010000000000000007 /* FilterView.swift in Sources */,
 				A10000010000000000000008 /* CompanyListView.swift in Sources */,
-				A10000010000000000000019 /* CompanyDetailView.swift in Sources */,
-				A10000010000000000000012 /* SplashView.swift in Sources */,
-				A10000010000000000000013 /* LoginView.swift in Sources */,
-				A10000010000000000000014 /* MainTabView.swift in Sources */,
-				A10000010000000000000015 /* SkillsExplorerView.swift in Sources */,
-				A10000010000000000000016 /* SkillsTaxonomy.swift in Sources */,
-				A10000010000000000000017 /* TenderSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +342,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = GovOps/Info.plist;
+				INFOPLIST_FILE = GovICTJobs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -381,7 +353,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.govops.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.govictjobs.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -399,7 +371,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = GovOps/Info.plist;
+				INFOPLIST_FILE = GovICTJobs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -410,7 +382,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.govops.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.govictjobs.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -423,7 +395,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A70000010000000000000001 /* Build configuration list for PBXProject "GovOps" */ = {
+		A70000010000000000000001 /* Build configuration list for PBXProject "GovICTJobs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A90000010000000000000001 /* Debug */,
@@ -432,7 +404,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A70000010000000000000003 /* Build configuration list for PBXNativeTarget "GovOps" */ = {
+		A70000010000000000000003 /* Build configuration list for PBXNativeTarget "GovICTJobs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A90000010000000000000003 /* Debug */,

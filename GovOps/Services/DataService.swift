@@ -42,12 +42,15 @@ class DataService: ObservableObject {
             }
 
             var loadedCompanies: [Company] = []
-            if let companiesURL = Bundle.main.url(forResource: "companies", withExtension: "json"),
-               let companiesData = try? Data(contentsOf: companiesURL),
-               let companies = try? decoder.decode([Company].self, from: companiesData) {
-                loadedCompanies = companies
-            } else {
-                loadErrors.append("companies.json")
+            let compFiles = ["companies", "companies2", "companies3", "companies4"]
+            for fileName in compFiles {
+                if let url = Bundle.main.url(forResource: fileName, withExtension: "json"),
+                   let data = try? Data(contentsOf: url),
+                   let comps = try? decoder.decode([Company].self, from: data) {
+                    loadedCompanies.append(contentsOf: comps)
+                } else {
+                    loadErrors.append("\(fileName).json")
+                }
             }
 
             // Compute all tiers of matching
@@ -101,62 +104,32 @@ class DataService: ObservableObject {
         companies.filter { $0.isAdvertising }
     }
 
-    // MARK: - 3-Tier Company Matching Logic
+    // MARK: - 3-Tier Panel-Based Company Matching
 
-    private static let companyKeywords: [String: [String]] = [
-        "paxus": ["developer", "engineer", "analyst", "architect", "project manager", "test", "infrastructure", "cloud", "network", "security", "support", "devops", "data", "mobile", "software"],
-        "hays": ["developer", "engineer", "analyst", "architect", "project manager", "test", "infrastructure", "cloud", "network", "security", "support", "devops", "data", "mobile", "software", "manager", "lead", "senior", "consultant", "cyber", "sap", "oracle", "java", ".net", "ux", "designer", "business analyst", "delivery"],
-        "peoplebank": ["developer", "engineer", "analyst", "architect", "project manager", "test", "infrastructure", "cloud", "security", "devops", "data", "software", "lead", "senior", "consultant"],
-        "deloitte": ["architect", "project manager", "manager", "lead", "senior", "consultant", "cyber", "security", "sap", "strategy", "program", "delivery", "advisory", "digital", "data", "cloud"],
-        "dxc": ["developer", "engineer", "analyst", "sap", "consultant", "infrastructure", "cloud", "software", ".net", "java", "oracle", "mobile", "devops"],
-        "nttdata": ["architect", "manager", "lead", "senior", "consultant", "analyst", "cyber", "security", "digital", "systems"],
-        "accenture": ["developer", "engineer", "analyst", "architect", "project manager", "test", "infrastructure", "cloud", "security", "devops", "data", "mobile", "software", "manager", "lead", "senior", "consultant", "cyber", "sap", "oracle", "java", ".net", "ux", "designer", "digital", "delivery", "program"],
-        "agiledigital": ["developer", "engineer", "data", "software", "cloud", "test", "mobile", "ux", "designer", "digital", "lead", "senior", "devops", ".net", "java", "oracle"],
-        "atturra": ["developer", "engineer", "consultant", "sap", "infrastructure", "cloud", "software", ".net", "java", "oracle", "integration", "devops", "data", "network"],
-        "harrisonmcmillan": ["analyst", "architect", "project manager", "manager", "lead", "senior", "consultant", "business analyst", "data", "test", "cyber", "security", "delivery", "program"],
-        "troocoo": ["developer", "engineer", "analyst", "test", "data", "cyber", "security", "digital", "cloud", "software", "consultant", "lead", "senior", "devops", ".net", "java", "sap", "mobile", "infrastructure"],
-        "gwgrecruitment": ["developer", "engineer", "analyst", "test", "data", "software", "lead", "senior", "infrastructure", "cloud", "security", "business analyst", "cyber"],
-        "modis": ["developer", "engineer", "analyst", "test", "data", "software", "lead", "senior", "infrastructure", "cloud", "security", "business analyst", "sap", "project manager"],
-        "equinix": ["infrastructure", "cloud", "network", "engineer", "data", "security"],
-        "aws": ["developer", "engineer", "architect", "cloud", "infrastructure", "software", "devops", "data", "security", "lead", "senior"],
-        "hpe": ["infrastructure", "cloud", "architect", "engineer", "security", "enterprise", "network", "data"],
-        "randstad": ["developer", "engineer", "analyst", "architect", "project manager", "test", "infrastructure", "cloud", "security", "devops", "data", "mobile", "software", "lead", "senior", "business analyst", "sap", ".net", "java"],
-        "roberthalf": ["developer", "engineer", "analyst", "architect", "project manager", "test", "data", "software", "lead", "senior", "business analyst", "manager", "consultant", "delivery", "cyber", "security", "sap", ".net", "java", "oracle", "devops"],
-        "michaelpage": ["developer", "engineer", "analyst", "architect", "project manager", "test", "infrastructure", "cloud", "security", "devops", "data", "software", "lead", "senior", "business analyst", "sap", "manager", "delivery", "cyber"],
-        "chandlermacleod": ["developer", "engineer", "analyst", "project manager", "test", "infrastructure", "cloud", "security", "devops", "data", "software", "lead", "senior", "business analyst", "sap", ".net", "java", "manager", "delivery", "program", "mobile"],
-        "hudson": ["analyst", "architect", "project manager", "manager", "lead", "senior", "consultant", "business analyst", "delivery", "program", "test", "cyber", "security"],
-        "manpowergroup": ["developer", "engineer", "analyst", "test", "infrastructure", "cloud", "security", "data", "software", "lead", "senior", "business analyst", "sap", ".net", "java", "project manager"],
-        "capgemini": ["developer", "engineer", "architect", "cloud", "data", "software", "digital", ".net", "java", "oracle", "mobile", "devops", "infrastructure", "ai"],
-        "kpmg": ["architect", "project manager", "manager", "lead", "senior", "consultant", "cyber", "security", "sap", "strategy", "program", "delivery", "advisory", "digital", "data", "cloud"],
-        "ey": ["architect", "project manager", "manager", "lead", "senior", "consultant", "cyber", "security", "sap", "strategy", "program", "delivery", "advisory", "digital"],
-        "pwc": ["architect", "project manager", "manager", "lead", "senior", "consultant", "cyber", "security", "strategy", "program", "delivery", "advisory", "digital", "data", "cloud"],
-        "fujitsu": ["developer", "engineer", "infrastructure", "cloud", "software", ".net", "java", "oracle", "devops", "data", "application"],
-        "infosys": ["developer", "engineer", "cloud", "software", "digital", ".net", "java", "data", "application", "devops", "infrastructure"],
-        "wipro": ["developer", "engineer", "cloud", "software", "digital", ".net", "java", "data", "infrastructure", "devops", "application"],
-        "cognizant": ["developer", "engineer", "cloud", "software", "digital", ".net", "java", "data", "infrastructure", "devops", "application"],
-        "leidos": ["developer", "engineer", "analyst", "architect", "infrastructure", "cloud", "security", "devops", "data", "software", "lead", "senior", "cyber", "defence"],
-        "thales": ["engineer", "infrastructure", "security", "cloud", "data", "software", "lead", "senior", "cyber", "defence", "digital", "network"],
-        "datacom": ["developer", "engineer", "infrastructure", "cloud", "software", ".net", "java", "devops", "data", "application", "managed"],
-        "dialog": ["consultant", "data", "digital", "analyst", "infrastructure", "cloud", "engineer", "lead", "senior", "sap", "transformation"],
-        "unisys": ["infrastructure", "cloud", "enterprise", "engineer", "digital", "security", "data", "network"],
-        "kinexus": ["developer", "engineer", "analyst", "test", "data", "software", "lead", "senior", "infrastructure", "cloud", "security", "business analyst", "sap", ".net", "java", "project manager", "devops"],
-        "finite": ["developer", "engineer", "analyst", "test", "data", "software", "lead", "senior", "infrastructure", "cloud", "security", "business analyst", "sap", ".net", "java", "project manager", "devops", "mobile"],
-        "aurec": ["developer", "engineer", "analyst", "test", "data", "software", "lead", "senior", "infrastructure", "cloud", "security", "business analyst", "sap", ".net", "java", "project manager", "devops"],
-        "encore": ["developer", "engineer", "analyst", "test", "data", "software", "lead", "senior", "infrastructure", "cloud", "security", "business analyst", "sap", ".net", "java", "project manager", "devops"],
-        "frontiersi": ["developer", "engineer", "data", "software", "cloud", "spatial", "digital", "infrastructure", "lead", "senior", "devops"]
+    /// Maps opportunity categories/keywords to relevant panel names
+    private static let panelCategoryMap: [String: [String]] = [
+        "hardware": ["Hardware Marketplace"],
+        "equipment": ["Hardware Marketplace"],
+        "device": ["Hardware Marketplace"],
+        "laptop": ["Hardware Marketplace"],
+        "server": ["Hardware Marketplace"],
+        "storage": ["Hardware Marketplace"],
+        "printer": ["Hardware Marketplace"],
+        "network": ["Hardware Marketplace", "Telecommunications Marketplace"],
+        "cabling": ["Hardware Marketplace"],
+        "telecom": ["Telecommunications Marketplace"],
+        "voice": ["Telecommunications Marketplace"],
+        "mobile": ["Telecommunications Marketplace", "Hardware Marketplace"],
+        "satellite": ["Telecommunications Marketplace"],
+        "internet": ["Telecommunications Marketplace"],
+        "broadband": ["Telecommunications Marketplace"],
+        "carriage": ["Telecommunications Marketplace"],
+        "unified communications": ["Telecommunications Marketplace"],
+        "contact centre": ["Telecommunications Marketplace"],
     ]
 
-    /// Strong/specific keywords that indicate exact role match
-    private static let strongKeywords: Set<String> = [
-        "developer", "engineer", "architect", ".net", "java", "sap", "cyber", "security",
-        "devops", "cloud", "infrastructure", "oracle", "test", "testing", "ux", "designer",
-        "data", "analytics", "mobile", "network", "database"
-    ]
-
-    /// Generic keywords that indicate general capability
-    private static let genericKeywords: Set<String> = [
-        "manager", "lead", "senior", "consultant", "analyst", "delivery", "program", "digital"
-    ]
+    /// Speciality keywords that indicate a company name match in an opportunity
+    private static let nameMatchThreshold = 3
 
     struct MatchingCaches {
         var all: [String: [String]]
@@ -165,59 +138,89 @@ class DataService: ObservableObject {
         var capable: [String: [String]]
     }
 
+    /// Build a lookup of company name words for fuzzy matching
+    private static func buildNameIndex(companies: [Company]) -> [String: [String]] {
+        var index: [String: [String]] = [:]  // word -> [companyId]
+        for company in companies {
+            let words = company.name.lowercased()
+                .components(separatedBy: CharacterSet.alphanumerics.inverted)
+                .filter { $0.count >= 3 }
+            for word in words {
+                index[word, default: []].append(company.id)
+            }
+        }
+        return index
+    }
+
     private static func computeAllMatching(opportunities: [Opportunity], companies: [Company]) -> MatchingCaches {
         var allCache: [String: [String]] = [:]
         var exactCache: [String: [String]] = [:]
         var similarCache: [String: [String]] = [:]
         var capableCache: [String: [String]] = [:]
 
+        // Pre-compute: companies by panel name
+        var companiesByPanel: [String: Set<String>] = [:]
+        for company in companies {
+            if let panels = company.panels {
+                for panel in panels where panel.isActive {
+                    companiesByPanel[panel.panelName, default: []].insert(company.id)
+                }
+            }
+        }
+
+        // Pre-compute: name word index for company name matching
+        let nameIndex = buildNameIndex(companies: companies)
+
+        // All DMP2 company IDs (the largest pool — "capable" tier)
+        let dmp2Ids = companiesByPanel["Digital Marketplace Panel 2"] ?? []
+
         for opp in opportunities {
             let titleLower = opp.title.lowercased()
-            var allIds: [String] = []
-            var exactIds: [String] = []
-            var similarIds: [String] = []
-            var capableIds: [String] = []
+            let titleWords = titleLower
+                .components(separatedBy: CharacterSet.alphanumerics.inverted)
+                .filter { $0.count >= 3 }
+            var exactIds: Set<String> = []
+            var similarIds: Set<String> = []
+            var capableIds: Set<String> = []
 
+            // Tier 1 — Exact: company name appears in opportunity title/buyer
+            let searchText = "\(opp.title) \(opp.buyer)".lowercased()
             for company in companies {
-                guard company.isAdvertising else { continue }
-                let keywords = companyKeywords[company.id] ?? []
-
-                var strongMatches = 0
-                var genericMatches = 0
-
-                for keyword in keywords {
-                    if titleLower.contains(keyword) {
-                        if strongKeywords.contains(keyword) {
-                            strongMatches += 1
-                        } else if genericKeywords.contains(keyword) {
-                            genericMatches += 1
-                        } else {
-                            strongMatches += 1
-                        }
-                    }
-                }
-
-                let totalMatches = strongMatches + genericMatches
-
-                if strongMatches >= 2 {
-                    // Exact match: multiple strong keyword hits
-                    exactIds.append(company.id)
-                    allIds.append(company.id)
-                } else if strongMatches == 1 || (genericMatches >= 2 && strongMatches >= 1) {
-                    // Similar: some relevance
-                    similarIds.append(company.id)
-                    allIds.append(company.id)
-                } else if totalMatches > 0 || !keywords.isEmpty {
-                    // Capable: on panel with some capability
-                    capableIds.append(company.id)
-                    allIds.append(company.id)
+                let companyWords = company.name.lowercased()
+                    .components(separatedBy: CharacterSet.alphanumerics.inverted)
+                    .filter { $0.count >= 3 }
+                guard companyWords.count > 0 else { continue }
+                let matchCount = companyWords.filter { searchText.contains($0) }.count
+                // If most of the company name words appear in the opportunity text
+                if matchCount >= min(nameMatchThreshold, max(1, companyWords.count - 1)) && matchCount >= 2 {
+                    exactIds.insert(company.id)
                 }
             }
 
+            // Tier 2 — Similar: company is on a panel relevant to this opportunity's category
+            for (keyword, panelNames) in panelCategoryMap {
+                if titleLower.contains(keyword) {
+                    for panelName in panelNames {
+                        if let panelCompanyIds = companiesByPanel[panelName] {
+                            similarIds.formUnion(panelCompanyIds)
+                        }
+                    }
+                }
+            }
+            // Remove any already in exact
+            similarIds.subtract(exactIds)
+
+            // Tier 3 — Capable: on any active panel (DMP2 is the big pool)
+            capableIds = dmp2Ids
+            capableIds.subtract(exactIds)
+            capableIds.subtract(similarIds)
+
+            let allIds = Array(exactIds) + Array(similarIds) + Array(capableIds.prefix(50))
+
             allCache[opp.id] = allIds
-            exactCache[opp.id] = exactIds
-            similarCache[opp.id] = similarIds
-            capableCache[opp.id] = capableIds
+            exactCache[opp.id] = Array(exactIds)
+            similarCache[opp.id] = Array(similarIds)
+            capableCache[opp.id] = Array(capableIds.prefix(50))
         }
 
         return MatchingCaches(all: allCache, exact: exactCache, similar: similarCache, capable: capableCache)
