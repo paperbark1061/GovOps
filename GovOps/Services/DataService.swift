@@ -42,7 +42,7 @@ class DataService: ObservableObject {
             }
 
             var loadedCompanies: [Company] = []
-            let compFiles = ["companies", "companies2", "companies3", "companies4", "companies5", "companies6", "companies7", "companies8"]
+            let compFiles = ["companies", "companies2", "companies3", "companies4", "companies5", "companies6", "companies7", "companies8", "companies9", "companies10", "companies11", "companies12"]
             for fileName in compFiles {
                 if let url = Bundle.main.url(forResource: fileName, withExtension: "json"),
                    let data = try? Data(contentsOf: url),

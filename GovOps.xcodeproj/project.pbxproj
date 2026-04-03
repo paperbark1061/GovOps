@@ -26,6 +26,10 @@
 		A10000010000000000000025 /* companies6.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000025 /* companies6.json */; };
 		A10000010000000000000026 /* companies7.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000026 /* companies7.json */; };
 		A10000010000000000000027 /* companies8.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000027 /* companies8.json */; };
+		A10000010000000000000028 /* companies9.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000028 /* companies9.json */; };
+		A10000010000000000000029 /* companies10.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000029 /* companies10.json */; };
+		A1000001000000000000002A /* companies11.json in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000002A /* companies11.json */; };
+		A1000001000000000000002B /* companies12.json in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000002B /* companies12.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		A20000010000000000000025 /* companies6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companies6.json; sourceTree = "<group>"; };
 		A20000010000000000000026 /* companies7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companies7.json; sourceTree = "<group>"; };
 		A20000010000000000000027 /* companies8.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companies8.json; sourceTree = "<group>"; };
+		A20000010000000000000028 /* companies9.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companies9.json; sourceTree = "<group>"; };
+		A20000010000000000000029 /* companies10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companies10.json; sourceTree = "<group>"; };
+		A2000001000000000000002A /* companies11.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companies11.json; sourceTree = "<group>"; };
+		A2000001000000000000002B /* companies12.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companies12.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,10 @@
 				A20000010000000000000025 /* companies6.json */,
 				A20000010000000000000026 /* companies7.json */,
 				A20000010000000000000027 /* companies8.json */,
+				A20000010000000000000028 /* companies9.json */,
+				A20000010000000000000029 /* companies10.json */,
+				A2000001000000000000002A /* companies11.json */,
+				A2000001000000000000002B /* companies12.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -207,6 +219,10 @@
 				A10000010000000000000025 /* companies6.json in Resources */,
 				A10000010000000000000026 /* companies7.json in Resources */,
 				A10000010000000000000027 /* companies8.json in Resources */,
+				A10000010000000000000028 /* companies9.json in Resources */,
+				A10000010000000000000029 /* companies10.json in Resources */,
+				A1000001000000000000002A /* companies11.json in Resources */,
+				A1000001000000000000002B /* companies12.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
